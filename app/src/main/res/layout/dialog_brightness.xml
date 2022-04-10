@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:id="@+id/brightness_dialog"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#B0000000"
+android:orientation="vertical">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="500dp"
+    android:layout_height="130dp"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <TextView
+        android:id="@+id/textBrightness"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/hind_light"
+        android:text="НАСТРОЙКА ЯРКОСТИ"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBarBrightness"
+        android:layout_width="400dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:max="255"
+        android:progressDrawable="@drawable/progress"
+        android:thumb="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBrightness" />
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:onClick="buttonMuteOnClick"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarBrightness"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBarBrightness"
+        app:srcCompat="@drawable/brightness_null" />
+
+    <ImageView
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:onClick="buttonMuteOnClick"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBarBrightness"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/seekBarBrightness"
+        app:srcCompat="@drawable/brightness_full" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/amiko</item>
+        <item>@font/antic</item>
+        <item>@font/biryani_extralight</item>
+        <item>@font/bubbler_one</item>
+        <item>@font/catamaran</item>
+        <item>@font/coda</item>
+        <item>@font/doppio_one</item>
+        <item>@font/hind_light</item>
+        <item>@font/mandali</item>
+    </array>
+</resources>

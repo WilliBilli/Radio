@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Radio</string>
+    <string name="dfm">Дача DFM</string>
+    <string name="todo">TODO</string>
+    <string name="search">Канал</string>
+    <string name="editText">Канал</string>
+    <string name="safe">СОХРАНИТЬ В ИЗБРАННОЕ?</string>
+</resources>

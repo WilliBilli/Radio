@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_style"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/forCustomView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topMenuFrame"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/watch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/hind_light"
+            android:textColor="@color/card_bg_color"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/iconSettings"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <ImageView
+            android:id="@+id/iconSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:onClick="iconSettingsOnClick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/set_settings"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/trayLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/watch"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/towerLogoFrame"
+        android:layout_width="354dp"
+        android:layout_height="489dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/buttonSeekUp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="210dp"
+                android:layout_marginTop="400dp"
+                android:onClick="buttonSeekUpOnClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/seek_up_button" />
+
+            <ImageView
+                android:id="@+id/buttonSeekDown"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="400dp"
+                android:onClick="buttonSeekDownOnClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/seek_down_button" />
+
+            <ImageView
+                android:id="@+id/tower_icon"
+                android:layout_width="136dp"
+                android:layout_height="196dp"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="204dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tower_icon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/stationListFrame"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="551dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginEnd="144dp"
+            android:background="@drawable/background_style_favorite" />
+
+        <ImageView
+            android:id="@+id/stationsListBackward"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="60dp"
+            android:background="@drawable/background_quad_button"
+            android:onClick="stationsListBackwardOnClick"
+            android:src="@drawable/button_left"/>
+
+        <ImageView
+            android:id="@+id/stationsListForward"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/background_quad_button"
+            android:onClick="stationsListForwardOnClick"
+            android:src="@drawable/button_right"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/savedStationsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="190dp"
+            android:layout_marginRight="260dp" />
+
+        <ImageView
+            android:id="@+id/buttonStationPlus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="190dp"
+            android:layout_gravity="end"
+            android:src="@drawable/button_plus"
+            android:onClick="buttonStationPlusOnClick" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="652dp">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="360dp"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:hint="@string/editText"
+            android:inputType="text"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/menu_list" />
+
+        <ImageView
+            android:id="@+id/buttonStations"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="412dp"
+            android:onClick="buttonStationsOnClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/search"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517"
+            app:srcCompat="@drawable/icon_stations" />
+
+        <ImageView
+            android:id="@+id/buttonVolume"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="54dp"
+            android:onClick="buttonVolumeOnClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonStations"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/volume" />
+
+        <ImageView
+            android:id="@+id/buttonTA"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="54dp"
+            android:onClick="buttonTAOnClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonVolume"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.458"
+            app:srcCompat="@drawable/icon_ta" />
+
+        <ImageView
+            android:id="@+id/buttonSoundSettings"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="54dp"
+            android:onClick="buttonSoundSettingsOnClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonTA"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.458"
+            app:srcCompat="@drawable/icon_settings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/stationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="612dp"
+            android:layout_marginTop="288dp"
+            android:fontFamily="@font/hind_light"
+            android:textColor="@color/colorPrimary"
+            android:textSize="36sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stationRDS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="612dp"
+            android:layout_marginTop="343dp"
+            android:fontFamily="@font/hind_light"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stationFREQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="612dp"
+            android:layout_marginTop="392dp"
+            android:fontFamily="@font/hind_light"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/dialog_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
